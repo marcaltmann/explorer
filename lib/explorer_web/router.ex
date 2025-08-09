@@ -23,6 +23,8 @@ defmodule ExplorerWeb.Router do
     get "/legal-notice", PageController, :legal_notice
     get "/privacy", PageController, :privacy
     get "/terms", PageController, :terms
+
+    get "/collections", CollectionController, :index
   end
 
   # Other scopes may use custom stacks.

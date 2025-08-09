@@ -46,7 +46,7 @@ defmodule ExplorerWeb.Layouts do
           <nav class="menu">
             <ul class="menu__list">
               <li class="menu__item">
-                <a href={~p"/"}>Collections</a>
+                <a href={~p"/collections"}>Collections</a>
               </li>
               <li class="menu__item">
                 <a href={~p"/"}>Sign in</a>
