@@ -6,22 +6,22 @@ defmodule ExplorerWeb.PageController do
   end
 
   def accessibility(conn, _params) do
-    render(conn, :accessibility)
+    render(conn, :accessibility, page_title: "Accessibility")
   end
 
   def contact(conn, _params) do
-    render(conn, :contact)
+    render(conn, :contact, page_title: "Contact")
   end
 
   def legal_notice(conn, _params) do
-    render(conn, :legal_notice)
+    render(conn, :legal_notice, page_title: "Legal Notice")
   end
 
   def privacy(conn, _params) do
-    render(conn, :privacy)
+    render(conn, :privacy, page_title: "Privacy")
   end
 
   def terms(conn, _params) do
-    render(conn, :terms)
+    render(conn, :terms, page_title: "Terms of Use")
   end
 end
