@@ -25,6 +25,8 @@ defmodule ExplorerWeb.Router do
     get "/terms", PageController, :terms
 
     get "/collections", CollectionController, :index
+    get "/collections/new", CollectionController, :new
+    get "/collections/:id", CollectionController, :show
   end
 
   # Other scopes may use custom stacks.

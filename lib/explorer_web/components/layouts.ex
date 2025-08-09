@@ -56,13 +56,13 @@ defmodule ExplorerWeb.Layouts do
         </div>
       </header>
 
-      <main class="site__main">
+      <main class="site__main u-mt">
         <div class="container">
           {render_slot(@inner_block)}
         </div>
       </main>
 
-      <footer class="footer">
+      <footer class="footer u-mt">
         <div class="footer__inner">
           <span>Media Explorer v{Application.spec(:explorer, :vsn)}</span>
 

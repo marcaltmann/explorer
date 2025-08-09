@@ -1,5 +1,28 @@
 <Layouts.app flash={@flash}>
+  <nav class="breadcrumbs">
+    <p>
+      <a>Collections</a>
+    </p>
+  </nav>
+
   <h1>{@page_title}</h1>
 
-  <p class="u-ll">Coming soon: collections...</p>
+  <p>
+    There are {@count} collections.
+  </p>
+
+  <ul class="grid u-mt">
+  <%= for collection <- @collections do %>
+    <li class="card">
+      <a href={~p"/collections/#{collection.id}"} class="card__link"><!--
+        --><h3 class="card__heading">{collection.name}</h3>
+        <p class="card__body">{collection.description}</p><!--
+      --></a>
+    </li>
+  <% end %>
+  </ul>
+
+  <p class="u-mt">
+    <.link href={~p"/collections/new"}>New collection</.link>
+  </p>
 </Layouts.app>

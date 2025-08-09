@@ -1,0 +1,14 @@
+<Layouts.app flash={@flash}>
+  <nav class="breadcrumbs">
+    <p>
+      <a class="breadcrumbs__link" href={~p"/collections"}>Collections</a> ▸
+      <a>{ @collection.name }</a>
+    </p>
+  </nav>
+
+  <h1>{@page_title}</h1>
+
+  <p>
+    {@collection.description}
+  </p>
+</Layouts.app>
