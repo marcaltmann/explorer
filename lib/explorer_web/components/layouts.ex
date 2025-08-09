@@ -46,10 +46,10 @@ defmodule ExplorerWeb.Layouts do
           <nav class="menu">
             <ul class="menu__list">
               <li class="menu__item">
-                <a href={~p"/contact"}>Contact</a>
+                <a href={~p"/"}>Collections</a>
               </li>
               <li class="menu__item">
-                <a href={~p"/accessibility"}>Accessibility</a>
+                <a href={~p"/"}>Sign in</a>
               </li>
             </ul>
           </nav>
@@ -65,6 +65,26 @@ defmodule ExplorerWeb.Layouts do
       <footer class="footer">
         <div class="footer__inner">
           <span class="">Media Explorer v{Application.spec(:explorer, :vsn)}</span>
+
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href={~p"/terms"}>Terms of use</a>
+              </li>
+              <li class="menu__item">
+                <a href={~p"/privacy"}>Privacy</a>
+              </li>
+              <li class="menu__item">
+                <a href={~p"/legal-notice"}>Legal notice</a>
+              </li>
+              <li class="menu__item">
+                <a href={~p"/contact"}>Contact</a>
+              </li>
+              <li class="menu__item">
+                <a href={~p"/accessibility"}>Accessibility</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </footer>
     </div>

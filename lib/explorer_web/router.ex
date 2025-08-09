@@ -20,6 +20,9 @@ defmodule ExplorerWeb.Router do
     get "/", PageController, :home
     get "/accessibility", PageController, :accessibility
     get "/contact", PageController, :contact
+    get "/legal-notice", PageController, :legal_notice
+    get "/privacy", PageController, :privacy
+    get "/terms", PageController, :terms
   end
 
   # Other scopes may use custom stacks.
