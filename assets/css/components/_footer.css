@@ -1,0 +1,16 @@
+.footer {
+  background-color: linen;
+  padding-block: 0.5rlh;
+}
+
+.footer__inner {
+  display: flex;
+  gap: 0.5rlh;
+  margin-inline: auto;
+  max-inline-size: 75rem;
+  padding-inline: 1rlh;
+}
+
+.footer__inner > :last-child {
+  margin-left: auto;
+}

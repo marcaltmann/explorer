@@ -1,0 +1,31 @@
+.card {
+}
+
+.card__link:any-link {
+  border: var(--border-width) solid lightgray;
+  border-radius: 5px;
+  padding-inline: 1rlh;
+  padding-block: calc(0.5rlh - var(--border-width));
+  color: black;
+  display: block;
+  text-decoration: none;
+  transition-property: border-color, box-shadow;
+  transition-duration: 125ms;
+}
+
+.card__link:hover {
+  border-color: gray;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.125);
+}
+
+.card__heading {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.card__body {
+  margin-top: 0;
+  margin-bottom: 0;
+}

@@ -1,0 +1,8 @@
+.grid {
+  display: grid;
+  gap: 1rlh;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style-type: none;
+  padding-left: 0;
+  margin-block: 0;
+}
