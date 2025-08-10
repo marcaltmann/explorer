@@ -24,11 +24,17 @@ defmodule ExplorerWeb.CollectionController do
     render(conn, :new, page_title: "New collection", changeset: changeset)
   end
 
-  def create(conn, params) do
-    changeset = Collection.changeset(%Collection{}, params["collection"])
-    Repo.insert(changeset)
+  def create(conn, %{"collection" => collection_params}) do
+    changeset = Collection.changeset(%Collection{}, collection_params)
 
-    redirect(conn, to: ~p"/collections")
+    case Repo.insert(changeset) do
+      {:ok, collection} ->
+        conn
+          |> put_flash(:info, "Collection created successfully.")
+          |> redirect(to: ~p"/collections/#{collection.id}")
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, :new, page_title: "New collection", changeset: changeset)
+    end
   end
 
   def edit(conn, %{"id" => id}) do
