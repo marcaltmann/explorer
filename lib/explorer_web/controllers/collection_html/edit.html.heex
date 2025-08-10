@@ -12,6 +12,8 @@
   <.form :let={f} for={@changeset} action={~p"/collections/#{@collection.id}/update"} class="u-mt">
     <.input field={f[:name]} label="Name" />
     <.input field={f[:description]} label="Description (optional)" type="textarea" />
-    <.button type="submit">Update collection</.button>
+    <div class="u-mt">
+      <.button type="submit">Update collection</.button>
+    </div>
   </.form>
 </Layouts.app>
