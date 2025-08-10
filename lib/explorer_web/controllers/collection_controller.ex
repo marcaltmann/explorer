@@ -30,4 +30,25 @@ defmodule ExplorerWeb.CollectionController do
 
     redirect(conn, to: ~p"/collections")
   end
+
+  def edit(conn, %{"id" => id}) do
+    collection = Repo.get(Collection, id)
+    changeset = Collection.changeset(collection, %{})
+
+    render(conn, :edit, page_title: "Edit #{collection.name}", collection: collection, changeset: changeset)
+  end
+
+  def update(conn, %{"id" => id, "collection" => collection_params}) do
+    collection = Repo.get(Collection, id)
+    changeset = Collection.changeset(collection, collection_params)
+    Repo.update(changeset)
+
+    redirect(conn, to: ~p"/collections/#{collection.id}")
+  end
+
+  def delete(conn, %{"id" => id}) do
+    %Collection{id: String.to_integer(id)} |> Repo.delete
+
+    redirect(conn, to: ~p"/collections")
+  end
 end

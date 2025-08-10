@@ -28,6 +28,9 @@ defmodule ExplorerWeb.Router do
     get "/collections/new", CollectionController, :new
     post "/collections/create", CollectionController, :create
     get "/collections/:id", CollectionController, :show
+    get "/collections/:id/edit", CollectionController, :edit
+    put "/collections/:id/update", CollectionController, :update
+    post "/collections/:id/delete", CollectionController, :delete
   end
 
   # Other scopes may use custom stacks.
