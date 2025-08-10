@@ -17,7 +17,8 @@
       <li class="card">
         <a href={~p"/collections/#{collection.id}"} class="card__link"><!--
           --><h3 class="card__heading">{collection.name}</h3>
-          <p class="card__body">{collection.description}</p><!--
+          <p class="card__body">{collection.description}<br>
+            {Date.to_iso8601(collection.inserted_at)}</p><!--
         --></a>
       </li>
     <% end %>
