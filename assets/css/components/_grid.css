@@ -1,8 +1,25 @@
 .grid {
+  container-type: inline-size;
+}
+
+.grid__list {
   display: grid;
-  gap: 1rlh;
-  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rlh;
+  grid-template-columns: 1fr;
   list-style-type: none;
   padding-left: 0;
   margin-block: 0;
+}
+
+@container (width > 20rlh) {
+  .grid__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@container (width > 35rlh) {
+  .grid__list {
+    gap: 1rlh;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

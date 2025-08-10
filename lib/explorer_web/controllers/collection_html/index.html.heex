@@ -11,16 +11,18 @@
     There are {@count} collections.
   </p>
 
-  <ul class="grid u-mt">
-  <%= for collection <- @collections do %>
-    <li class="card">
-      <a href={~p"/collections/#{collection.id}"} class="card__link"><!--
-        --><h3 class="card__heading">{collection.name}</h3>
-        <p class="card__body">{collection.description}</p><!--
-      --></a>
-    </li>
-  <% end %>
-  </ul>
+  <div class="grid u-mt">
+    <ul class="grid__list">
+    <%= for collection <- @collections do %>
+      <li class="card">
+        <a href={~p"/collections/#{collection.id}"} class="card__link"><!--
+          --><h3 class="card__heading">{collection.name}</h3>
+          <p class="card__body">{collection.description}</p><!--
+        --></a>
+      </li>
+    <% end %>
+    </ul>
+  </div>
 
   <p class="u-mt">
     <.link href={~p"/collections/new"}>New collection</.link>

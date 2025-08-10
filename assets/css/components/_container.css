@@ -1,5 +1,11 @@
 .container {
   margin-inline: auto;
-  max-inline-size: 60rem;
-  padding-inline: 1rlh;
+  max-inline-size: 70rem;
+  padding-inline: 0.5rlh;
+}
+
+@media (min-width: 30rlh) {
+  .container {
+    padding-inline: 1rlh;
+  }
 }
