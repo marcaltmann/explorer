@@ -26,6 +26,7 @@ defmodule ExplorerWeb.Router do
 
     get "/collections", CollectionController, :index
     get "/collections/new", CollectionController, :new
+    post "/collections/create", CollectionController, :create
     get "/collections/:id", CollectionController, :show
   end
 

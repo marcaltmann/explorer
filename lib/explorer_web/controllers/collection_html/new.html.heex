@@ -9,8 +9,8 @@
   <h1>{@page_title}</h1>
 
   <.form :let={f} for={@changeset} action={~p"/collections/create"} class="u-mt">
-    <.input field={f[:name]} />
-    <.input field={f[:description]} type="textarea" />
-    <.button type="submit">Submit</.button>
+    <.input field={f[:name]} label="Name" />
+    <.input field={f[:description]} label="Description (optional)" type="textarea" />
+    <.button type="submit">Create collection</.button>
   </.form>
 </Layouts.app>

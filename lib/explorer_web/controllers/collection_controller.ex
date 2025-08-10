@@ -19,8 +19,15 @@ defmodule ExplorerWeb.CollectionController do
   end
 
   def new(conn, _params) do
-    changeset = Collection.changeset(%Collection{}, %{name: "New one", description: "My description"})
+    changeset = Collection.changeset(%Collection{}, %{})
 
     render(conn, :new, page_title: "New collection", changeset: changeset)
+  end
+
+  def create(conn, params) do
+    changeset = Collection.changeset(%Collection{}, params["collection"])
+    Repo.insert(changeset)
+
+    redirect(conn, to: ~p"/collections")
   end
 end
