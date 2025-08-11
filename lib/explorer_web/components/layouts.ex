@@ -48,9 +48,21 @@ defmodule ExplorerWeb.Layouts do
               <li class="menu__item">
                 <a href={~p"/collections"}>Collections</a>
               </li>
-              <li class="menu__item">
-                <a href={~p"/"}>Sign in</a>
-              </li>
+              <%= if @current_scope do %>
+                <li class="menu__item">
+                  <.link href={~p"/users/settings"}>{@current_scope.user.email}</.link>
+                </li>
+                <li class="menu__item">
+                  <.link href={~p"/users/log-out"} method="delete">Log out</.link>
+                </li>
+              <% else %>
+                <li class="menu__item">
+                  <.link href={~p"/users/register"}>Register</.link>
+                </li>
+                <li class="menu__item">
+                  <.link href={~p"/users/log-in"}>Log in</.link>
+                </li>
+              <% end %>
             </ul>
           </nav>
         </div>
