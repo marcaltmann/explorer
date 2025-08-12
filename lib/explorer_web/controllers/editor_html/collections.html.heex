@@ -1,0 +1,31 @@
+<Layouts.app flash={@flash} current_scope={@current_scope}>
+  <nav class="breadcrumbs">
+    <p>
+      <a class="breadcrumbs__link" href={~p"/editor"}>Editor</a> ▸
+      <a>Collections</a>
+    </p>
+  </nav>
+
+  <h1>{@page_title}</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Items</th>
+        <th>Created at</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= for collection <- @collections do %>
+      <tr>
+        <td>{collection.name}</td>
+        <td>{collection.description}</td>
+        <td>0</td>
+        <td>{Date.to_iso8601(collection.inserted_at)}</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</Layouts.app>

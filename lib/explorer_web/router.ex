@@ -87,9 +87,10 @@ defmodule ExplorerWeb.Router do
 
   ## Admin/Editor routes
 
-  scope "/", ExplorerWeb do
+  scope "/editor", ExplorerWeb do
     pipe_through [:browser, :require_authenticated_user]
 
-    get "/editor", EditorController, :home
+    get "/", EditorController, :home
+    get "/collections", EditorController, :collections
   end
 end

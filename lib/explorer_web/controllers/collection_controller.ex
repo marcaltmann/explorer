@@ -7,9 +7,8 @@ defmodule ExplorerWeb.CollectionController do
   def index(conn, _params) do
     collections = Repo.all(Collection)
     count = length(collections)
-    changeset = Collection.changeset(%Collection{}, %{name: "New one", description: "My description"})
 
-    render(conn, :index, page_title: "Collections", collections: collections, count: count, changeset: changeset)
+    render(conn, :index, page_title: "Collections", collections: collections, count: count)
   end
 
   def show(conn, %{"id" => id}) do

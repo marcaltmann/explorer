@@ -50,6 +50,9 @@ defmodule ExplorerWeb.Layouts do
               </li>
               <%= if @current_scope do %>
                 <li class="menu__item">
+                  <.link href={~p"/editor"}>Editor</.link>
+                </li>
+                <li class="menu__item">
                   <.link href={~p"/users/settings"}>{@current_scope.user.email}</.link>
                 </li>
                 <li class="menu__item">
