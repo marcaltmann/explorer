@@ -83,4 +83,13 @@ defmodule ExplorerWeb.Router do
     post "/users/log-in", UserSessionController, :create
     delete "/users/log-out", UserSessionController, :delete
   end
+
+
+  ## Admin/Editor routes
+
+  scope "/", ExplorerWeb do
+    pipe_through [:browser, :require_authenticated_user]
+
+    get "/editor", EditorController, :home
+  end
 end
