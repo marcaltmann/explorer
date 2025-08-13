@@ -11,5 +11,6 @@
 @import url("components/_layout.css");
 @import url("components/_menu.css");
 @import url("components/_site.css");
+@import url("components/_table.css");
 
 @import url("utilities/_spacing.css");

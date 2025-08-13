@@ -19,7 +19,7 @@ a:any-link {
   text-decoration: none;
 }
 
-a:hover {
+a:any-link:hover {
   text-decoration: underline;
 }
 
