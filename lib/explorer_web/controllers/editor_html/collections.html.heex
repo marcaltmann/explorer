@@ -8,6 +8,10 @@
 
   <h1>{@page_title}</h1>
 
+  <p>
+    There are {@count} collections.
+  </p>
+
   <table>
     <thead>
       <tr>
@@ -20,12 +24,16 @@
     <tbody>
       <%= for collection <- @collections do %>
       <tr>
-        <td>{collection.name}</td>
+        <td><.link href={~p"/editor/collections/#{collection.id}"}>{collection.name}</.link></td>
         <td>{collection.description}</td>
-        <td>0</td>
+        <td>{:rand.uniform(25)}</td>
         <td>{Date.to_iso8601(collection.inserted_at)}</td>
       </tr>
       <% end %>
     </tbody>
   </table>
+
+  <p class="u-mt">
+    <.link href={~p"/collections/new"}>New collection</.link>
+  </p>
 </Layouts.app>

@@ -92,5 +92,6 @@ defmodule ExplorerWeb.Router do
 
     get "/", EditorController, :home
     get "/collections", EditorController, :collections
+    get "/collections/:id", EditorController, :collection_detail
   end
 end

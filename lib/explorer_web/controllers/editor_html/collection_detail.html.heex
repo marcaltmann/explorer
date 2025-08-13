@@ -1,0 +1,62 @@
+<Layouts.app flash={@flash} current_scope={@current_scope}>
+  <nav class="breadcrumbs">
+    <p>
+      <.link class="breadcrumbs__link" href={~p"/editor"}>Editor</.link> ▸
+      <.link class="breadcrumbs__link" href={~p"/editor/collections"}>Collections</.link> ▸
+      <a>{@collection.name}</a>
+    </p>
+  </nav>
+
+  <h1>{@page_title}</h1>
+
+  <div class="layout layout--admin-page">
+    <section>
+      <h2>Metadata</h2>
+      <dl>
+        <dt>Name</dt>
+        <dd>{@collection.name}</dd>
+        <dt>Description</dt>
+        <dd>{@collection.description}</dd>
+        <dt>Created at</dt>
+        <dd>{Date.to_iso8601(@collection.inserted_at)}</dd>
+        <dt>Updated at</dt>
+        <dd>{Date.to_iso8601(@collection.updated_at)}</dd>
+      </dl>
+    </section>
+    <section>
+      <h2>Actions</h2>
+      <p>
+        <a href={~p"/collections/#{@collection.id}/edit"}>Edit</a>
+      </p>
+      <form method="post" action={~p"/collections/#{@collection.id}/delete"} data-confirm="Are you sure?">
+        <input name="_csrf_token" type="hidden" hidden="" value={get_csrf_token()}>
+        <button type="submit">Delete</button>
+      </form>
+    </section>
+  </div>
+
+  <section>
+    <h2>Items</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Length</th>
+          <th>Created at</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><.link href=""}>Lesson 60</.link></td>
+          <td>Audio of lesson 60 text</td>
+          <td>Audio</td>
+          <td>26m12s</td>
+          <td>2015-08-02</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</Layouts.app>

@@ -4,9 +4,11 @@
 
 @import url("components/_card.css");
 @import url("components/_container.css");
+@import url("components/_flash.css");
 @import url("components/_footer.css");
 @import url("components/_grid.css");
 @import url("components/_header.css");
+@import url("components/_layout.css");
 @import url("components/_menu.css");
 @import url("components/_site.css");
 

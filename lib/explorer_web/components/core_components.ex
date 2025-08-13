@@ -54,23 +54,23 @@ defmodule ExplorerWeb.CoreComponents do
       id={@id}
       data-flash
       role="alert"
-      class="toast toast-top toast-end z-50"
+      class="flash__container"
       {@rest}
     >
       <div class={[
-        "alert w-80 sm:w-96 max-w-80 sm:max-w-96 text-wrap",
-        @kind == :info && "alert-info",
-        @kind == :error && "alert-error"
+        "flash__alert",
+        @kind == :info && "flash__alert--info",
+        @kind == :error && "flash__alert--error"
       ]}>
-        <.icon :if={@kind == :info} name="hero-information-circle" class="size-5 shrink-0" />
-        <.icon :if={@kind == :error} name="hero-exclamation-circle" class="size-5 shrink-0" />
+        <.icon :if={@kind == :info} name="hero-" class="" />
+        <.icon :if={@kind == :error} name="hero-" class="" />
         <div>
-          <p :if={@title} class="font-semibold">{@title}</p>
+          <p :if={@title} class="">{@title}</p>
           <p>{msg}</p>
         </div>
         <div class="flex-1" />
-        <button type="button" class="group self-start cursor-pointer" aria-label={gettext("close")}>
-          <.icon name="hero-x-mark" class="size-5 opacity-40 group-hover:opacity-70" />
+        <button type="button" class="" aria-label={gettext("close")}>
+          x
         </button>
       </div>
     </div>

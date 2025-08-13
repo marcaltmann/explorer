@@ -1,0 +1,9 @@
+.layout {
+
+}
+
+.layout--admin-page {
+  display: grid;
+  gap: 1rlh;
+  grid-template-columns: 3fr 1fr;
+}

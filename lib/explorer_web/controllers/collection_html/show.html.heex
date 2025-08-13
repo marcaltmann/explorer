@@ -11,12 +11,4 @@
   <p>
     {@collection.description}
   </p>
-
-  <p>
-    <a href={~p"/collections/#{@collection.id}/edit"}>Edit</a>
-  </p>
-  <form method="post" action={~p"/collections/#{@collection.id}/delete"}>
-    <input name="_csrf_token" type="hidden" hidden="" value={get_csrf_token()}>
-    <button type="submit">Delete</button>
-  </form>
 </Layouts.app>
