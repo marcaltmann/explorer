@@ -1,6 +1,5 @@
 /* Delete button (destructive action) */
 .button {
-  background-color: #d9534f;
   color: #fff;
   border: none;
   padding: 0.25rlh 0.75rlh;
@@ -12,12 +11,25 @@
   transition: background-color 0.15s ease, transform 0.05s ease;
 }
 
-/* Hover and focus states */
-.button:hover,
-.button:focus {
-  background-color: #c9302c;
-  outline: none;
+.button--danger {
+  background-color: #d9534f;
 }
+
+.button--submit {
+  background-color: #007bff;
+}
+
+/* Hover and focus states */
+.button--danger:hover,
+.button--danger:focus {
+  background-color: #c9302c;
+}
+
+.button--submit:hover,
+.button--submit:focus {
+  background-color: #0069d9;
+}
+
 
 /* Active click feedback */
 .button:active {

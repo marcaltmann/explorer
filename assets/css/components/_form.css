@@ -2,6 +2,7 @@
 form {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 1rem;
   max-width: 500px;
 }
@@ -40,7 +41,6 @@ form textarea {
 
 /* Submit button */
 form button[type="submit"] {
-  background-color: #007bff;
   color: #fff;
   border: none;
   padding: 0.6rem 1.2rem;
@@ -49,12 +49,6 @@ form button[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.15s ease, transform 0.05s ease;
-}
-
-/* Hover/focus button states */
-form button[type="submit"]:hover,
-form button[type="submit"]:focus {
-  background-color: #0069d9;
 }
 
 /* Active button state */
