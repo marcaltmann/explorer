@@ -1,7 +1,7 @@
 <Layouts.app flash={@flash} current_scope={@current_scope}>
   <nav class="breadcrumbs">
     <p>
-      <a class="breadcrumbs__link" href={~p"/editor"}>Editor</a> ▸
+      <.link class="breadcrumbs__link" href={~p"/admin"}>Admin</.link> ▸
       <a>Collections</a>
     </p>
   </nav>
@@ -22,18 +22,16 @@
       </tr>
     </thead>
     <tbody>
-      <%= for collection <- @collections do %>
-      <tr>
-        <td><.link href={~p"/editor/collections/#{collection.id}"}>{collection.name}</.link></td>
+      <tr :for={collection <- @collections}>
+        <td><.link href={~p"/admin/collections/#{collection.id}"}>{collection.name}</.link></td>
         <td>{collection.description}</td>
         <td>{:rand.uniform(25)}</td>
         <td>{Date.to_iso8601(collection.inserted_at)}</td>
       </tr>
-      <% end %>
     </tbody>
   </table>
 
   <p class="u-mt">
-    <.link href={~p"/collections/new"}>New collection</.link>
+    <.link href={~p"/admin/collections/new"}>New collection</.link>
   </p>
 </Layouts.app>

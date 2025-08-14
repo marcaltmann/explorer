@@ -23,10 +23,49 @@ a:any-link:hover {
   text-decoration: underline;
 }
 
-dl > dt {
-  font-weight: bold;
+
+/* Try out ChatGPT CSS */
+/* Main page title */
+h1 {
+  font-family: system-ui, sans-serif;
+  font-size: 2rem; /* ~32px */
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  color: #222;
+  line-height: 1.25;
 }
 
-dl > dd {
-  margin-left: 1rlh;
+/* Section headings */
+h2 {
+  font-family: system-ui, sans-serif;
+  font-size: 1.25rem; /* ~20px */
+  font-weight: 500;
+  margin: 2rem 0 1rem 0;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.25rem;
+}
+
+
+/* Definition list container */
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 1rlh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Term (label) */
+dt {
+  font-weight: 500;
+  color: #555;
+  white-space: nowrap;
+}
+
+/* Definition (value) */
+dd {
+  margin: 0;
+  color: #222;
+  word-break: break-word;
 }

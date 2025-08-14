@@ -1,0 +1,17 @@
+<Layouts.app flash={@flash} current_scope={@current_scope}>
+  <nav class="breadcrumbs">
+    <p>
+      <a>Admin</a>
+    </p>
+  </nav>
+
+  <h1>{@page_title}</h1>
+
+  <p>
+    Welcome to the admin section.
+  </p>
+
+  <p>
+    Here you can create, edit or delete <.link href={~p"/admin/collections"}>{@collection_count} collections</.link> and their items.
+  </p>
+</Layouts.app>

@@ -5,6 +5,7 @@
   right: 1rlh;
 }
 
+/*
 .flash__container {
 
 }
@@ -26,4 +27,59 @@
 
 .flash__alert button {
   margin-left: auto;
+}
+*/
+
+/* Container just ensures proper stacking & spacing */
+.flash__container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  max-width: 400px;
+  z-index: 1000;
+}
+
+/* Base alert style */
+.flash__alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* Info type */
+.flash__alert--info {
+  background-color: #007bff;
+}
+
+/* Error type */
+.flash__alert--error {
+  background-color: #d9534f;
+}
+
+/* Message text */
+.flash__message {
+  margin: 0;
+  flex: 1;
+}
+
+/* Close button */
+.flash__button {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+  transition: opacity 0.15s ease;
+}
+
+.flash__button:hover {
+  opacity: 0.8;
 }

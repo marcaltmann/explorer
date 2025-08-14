@@ -1,0 +1,24 @@
+<Layouts.app flash={@flash} current_scope={@current_scope}>
+  <nav class="breadcrumbs">
+    <p>
+      <.link class="breadcrumbs__link" href={~p"/admin"}>Admin</.link> ▸
+      <.link class="breadcrumbs__link" href={~p"/admin/collections"}>Collections</.link> ▸
+      <a>New</a>
+    </p>
+  </nav>
+
+  <h1>{@page_title}</h1>
+
+  <.form :let={f} for={@changeset} method="post" action={~p"/admin/collections"} class="u-mt">
+    <.input field={f[:name]} label="Name" placeholder="Interviews" />
+    <.input
+      field={f[:description]}
+      label="Description (optional)"
+      type="textarea"
+      placeholder="Interviews of photographers"
+    />
+    <div>
+      <.button type="submit">Create collection</.button>
+    </div>
+  </.form>
+</Layouts.app>

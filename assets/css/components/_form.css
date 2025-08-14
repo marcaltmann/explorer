@@ -1,0 +1,63 @@
+/* Form container */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+}
+
+/* Labels */
+form label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+/* Text inputs and textareas */
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Focus state */
+form input[type="text"]:focus,
+form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+/* Textarea adjustments */
+form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Submit button */
+form button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+/* Hover/focus button states */
+form button[type="submit"]:hover,
+form button[type="submit"]:focus {
+  background-color: #0069d9;
+}
+
+/* Active button state */
+form button[type="submit"]:active {
+  transform: scale(0.97);
+}

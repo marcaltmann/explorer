@@ -39,10 +39,7 @@ defmodule ExplorerWeb.CoreComponents do
   """
   attr :id, :string, doc: "the optional id of flash container"
   attr :flash, :map, default: %{}, doc: "the map of flash messages to display"
-  attr :title, :string, default: nil
   attr :kind, :atom, values: [:info, :error], doc: "used for styling and flash lookup"
-  attr :rest, :global, doc: "the arbitrary HTML attributes to add to the flash container"
-
   slot :inner_block, doc: "the optional inner block that renders the flash message"
 
   def flash(assigns) do
@@ -55,21 +52,14 @@ defmodule ExplorerWeb.CoreComponents do
       data-flash
       role="alert"
       class="flash__container"
-      {@rest}
     >
       <div class={[
         "flash__alert",
         @kind == :info && "flash__alert--info",
         @kind == :error && "flash__alert--error"
       ]}>
-        <.icon :if={@kind == :info} name="hero-" class="" />
-        <.icon :if={@kind == :error} name="hero-" class="" />
-        <div>
-          <p :if={@title} class="">{@title}</p>
-          <p>{msg}</p>
-        </div>
-        <div class="flex-1" />
-        <button type="button" class="" aria-label={gettext("close")}>
+        <p class="flash__message">{msg}</p>
+        <button type="button" class="flash__button" aria-label={gettext("close")}>
           x
         </button>
       </div>

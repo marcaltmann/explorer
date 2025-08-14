@@ -1,8 +1,8 @@
 <Layouts.app flash={@flash} current_scope={@current_scope}>
   <nav class="breadcrumbs">
     <p>
-      <.link class="breadcrumbs__link" href={~p"/editor"}>Editor</.link> ▸
-      <.link class="breadcrumbs__link" href={~p"/editor/collections"}>Collections</.link> ▸
+      <.link class="breadcrumbs__link" href={~p"/admin"}>Admin</.link> ▸
+      <.link class="breadcrumbs__link" href={~p"/admin/collections"}>Collections</.link> ▸
       <a>{@collection.name}</a>
     </p>
   </nav>
@@ -26,12 +26,11 @@
     <section>
       <h2>Actions</h2>
       <p>
-        <a href={~p"/collections/#{@collection.id}/edit"}>Edit</a>
+        <a href={~p"/admin/collections/#{@collection.id}/edit"}>Edit</a>
       </p>
-      <form method="post" action={~p"/collections/#{@collection.id}/delete"} data-confirm="Are you sure?">
-        <input name="_csrf_token" type="hidden" hidden="" value={get_csrf_token()}>
-        <button type="submit">Delete</button>
-      </form>
+      <.form method="delete" action={~p"/admin/collections/#{@collection.id}"} data-confirm="Are you sure?">
+        <button type="submit" class="button">Delete</button>
+      </.form>
     </section>
   </div>
 

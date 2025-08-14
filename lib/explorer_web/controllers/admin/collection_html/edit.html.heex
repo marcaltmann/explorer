@@ -1,0 +1,20 @@
+<Layouts.app flash={@flash} current_scope={@current_scope}>
+  <nav class="breadcrumbs">
+    <p>
+      <.link class="breadcrumbs__link" href={~p"/admin"}>Admin</.link> ▸
+      <.link class="breadcrumbs__link" href={~p"/admin/collections"}>Collections</.link> ▸
+      <.link class="breadcrumbs__link" href={~p"/admin/collections/#{@collection}"}>{@collection.name}</.link> ▸
+      <a>Edit</a>
+    </p>
+  </nav>
+
+  <h1>{@page_title}</h1>
+
+  <.form :let={f} for={@changeset} method="put" action={~p"/admin/collections/#{@collection.id}"} class="u-mt">
+    <.input field={f[:name]} label="Name" />
+    <.input field={f[:description]} label="Description (optional)" type="textarea" />
+    <div>
+      <.button type="submit">Update collection</.button>
+    </div>
+  </.form>
+</Layouts.app>

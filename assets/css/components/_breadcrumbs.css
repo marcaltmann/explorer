@@ -1,0 +1,33 @@
+.breadcrumbs {
+  font-family: system-ui, sans-serif;
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.breadcrumbs p {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.breadcrumbs__link {
+  text-decoration: none;
+  color: #007acc;
+}
+
+.breadcrumbs__link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs a {
+  color: #333;
+}
+
+.breadcrumbs a:last-child {
+  font-weight: 500;
+  pointer-events: none;
+  text-decoration: none;
+}

@@ -1,0 +1,30 @@
+/* Delete button (destructive action) */
+.button {
+  background-color: #d9534f;
+  color: #fff;
+  border: none;
+  padding: 0.25rlh 0.75rlh;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1rlh;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+/* Hover and focus states */
+.button:hover,
+.button:focus {
+  background-color: #c9302c;
+  outline: none;
+}
+
+/* Active click feedback */
+.button:active {
+  transform: scale(0.97);
+}
+
+/* Optional: small red glow to emphasize danger */
+.button:focus-visible {
+  box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.4);
+}

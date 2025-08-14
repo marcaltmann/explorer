@@ -50,7 +50,7 @@ defmodule ExplorerWeb.Layouts do
               </li>
               <%= if @current_scope do %>
                 <li class="menu__item">
-                  <.link href={~p"/editor"}>Editor</.link>
+                  <.link href={~p"/admin"}>Admin</.link>
                 </li>
                 <li class="menu__item">
                   <.link href={~p"/users/settings"}>{@current_scope.user.email}</.link>
@@ -77,7 +77,7 @@ defmodule ExplorerWeb.Layouts do
         </div>
       </main>
 
-      <footer class="footer u-mt">
+      <footer class="footer u-mt-large">
         <div class="footer__inner">
           <span>Media Explorer v{Application.spec(:explorer, :vsn)}</span>
 
@@ -93,19 +93,19 @@ defmodule ExplorerWeb.Layouts do
           <nav class="menu">
             <ul class="menu__list">
               <li class="menu__item">
-                <a href={~p"/terms"}>Terms of use</a>
+                <.link href={~p"/terms"}>Terms of use</.link>
               </li>
               <li class="menu__item">
-                <a href={~p"/privacy"}>Privacy</a>
+                <.link href={~p"/privacy"}>Privacy</.link>
               </li>
               <li class="menu__item">
-                <a href={~p"/legal-notice"}>Legal notice</a>
+                <.link href={~p"/legal-notice"}>Legal notice</.link>
               </li>
               <li class="menu__item">
-                <a href={~p"/contact"}>Contact</a>
+                <.link href={~p"/contact"}>Contact</.link>
               </li>
               <li class="menu__item">
-                <a href={~p"/accessibility"}>Accessibility</a>
+                <.link href={~p"/accessibility"}>Accessibility</.link>
               </li>
             </ul>
           </nav>

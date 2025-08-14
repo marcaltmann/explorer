@@ -27,13 +27,7 @@ defmodule ExplorerWeb.Router do
     get "/privacy", PageController, :privacy
     get "/terms", PageController, :terms
 
-    get "/collections", CollectionController, :index
-    get "/collections/new", CollectionController, :new
-    post "/collections/create", CollectionController, :create
-    get "/collections/:id", CollectionController, :show
-    get "/collections/:id/edit", CollectionController, :edit
-    put "/collections/:id/update", CollectionController, :update
-    post "/collections/:id/delete", CollectionController, :delete
+    resources "/collections", CollectionController, only: [:index, :show]
   end
 
   # Other scopes may use custom stacks.
@@ -85,13 +79,12 @@ defmodule ExplorerWeb.Router do
   end
 
 
-  ## Admin/Editor routes
+  ## Admin routes
 
-  scope "/editor", ExplorerWeb do
+  scope "/admin", ExplorerWeb.Admin do
     pipe_through [:browser, :require_authenticated_user]
 
-    get "/", EditorController, :home
-    get "/collections", EditorController, :collections
-    get "/collections/:id", EditorController, :collection_detail
+    get "/", DashboardController, :home
+    resources "/collections", CollectionController
   end
 end
