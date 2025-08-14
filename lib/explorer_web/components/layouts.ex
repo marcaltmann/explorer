@@ -25,8 +25,8 @@ defmodule ExplorerWeb.Layouts do
       </Layouts.app>
 
   """
+  attr :admin, :boolean, default: false, doc: "show admin version of layout"
   attr :flash, :map, required: true, doc: "the map of flash messages"
-
   attr :current_scope, :map,
     default: nil,
     doc: "the current [scope](https://hexdocs.pm/phoenix/scopes.html)"
@@ -35,7 +35,7 @@ defmodule ExplorerWeb.Layouts do
 
   def app(assigns) do
     ~H"""
-    <div class="site">
+    <div class={if @admin, do: "site site--admin", else: "site site--default"}>
       <header class="header">
         <div class="header__inner">
           <div class="">

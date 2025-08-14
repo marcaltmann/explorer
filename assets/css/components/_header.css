@@ -23,6 +23,10 @@
   font-family: system-ui, sans-serif;
 }
 
+.site--admin .header {
+  background-color: var(--color-admin);
+}
+
 .header__inner {
   max-width: 1200px;
   margin: 0 auto;

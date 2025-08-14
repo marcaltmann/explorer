@@ -4,6 +4,14 @@
   min-height: 100vh;
 }
 
+.site--default {
+
+}
+
+.site--admin {
+  background-color: var(--color-admin);
+}
+
 .site__main {
   flex-grow: 1;
 }
