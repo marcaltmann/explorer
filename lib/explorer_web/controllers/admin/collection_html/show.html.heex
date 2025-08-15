@@ -28,7 +28,7 @@
       <p>
         <a href={~p"/admin/collections/#{@collection.id}/edit"}>Edit</a>
       </p>
-      <.form method="delete" action={~p"/admin/collections/#{@collection.id}"} data-confirm="Are you sure?">
+      <.form for={nil} method="delete" action={~p"/admin/collections/#{@collection.id}"} data-confirm="Are you sure?">
         <button type="submit" class="button button--danger">Delete</button>
       </.form>
     </section>
