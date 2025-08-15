@@ -40,7 +40,11 @@ defmodule ExplorerWeb.Layouts do
         <div class="header__inner">
           <div class="">
             <a href="/" class="">
-              Explorer
+              <%= if @admin do %>
+                Explorer Admin
+              <% else %>
+                Explorer
+              <% end %>
             </a>
           </div>
           <nav class="menu">

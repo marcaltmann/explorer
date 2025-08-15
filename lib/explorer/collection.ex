@@ -5,6 +5,7 @@ defmodule Explorer.Collection do
   schema "collections" do
     field :name, :string
     field :description, :string
+    has_many :items, Explorer.Item
 
     timestamps(type: :utc_datetime)
   end

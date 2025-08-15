@@ -24,7 +24,8 @@
 }
 
 .site--admin .header {
-  background-color: var(--color-admin);
+  background-color: darkcyan;
+  color: #fff;
 }
 
 .header__inner {
@@ -40,7 +41,11 @@
 
 .header a {
   text-decoration: none;
-  color: #333;
+  color: #111;
+}
+
+.site--admin .header a {
+  color: #fff;
 }
 
 .header a:hover {
