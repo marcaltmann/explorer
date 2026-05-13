@@ -16,6 +16,10 @@ uv run manage.py makemessages -a               # update existing .po files
 uv run manage.py compilemessages               # compile .po → .mo
 ```
 
+## Git
+
+Keep commit messages short (one line is usually enough). Do not add `Co-Authored-By` trailers.
+
 ## Architecture
 
 **Project layout:** The Django project package is `explorer/` (contains `settings.py`, `urls.py`). Apps live inside it as sub-packages (e.g. `explorer/my_account/`).
