@@ -2,9 +2,12 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
 
+import explorer.core.views as core_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('', core_views.welcome, name='welcome'),
 ]
 
 if settings.DJANGO_ENV == 'development':
