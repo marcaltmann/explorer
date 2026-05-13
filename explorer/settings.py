@@ -34,7 +34,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'explorer.core',
     'explorer.my_account',
+    'explorer.library',
     'explorer.resources',
+    'explorer.organization',
 ]
 
 if DJANGO_ENV == 'development':
