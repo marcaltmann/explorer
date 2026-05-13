@@ -9,5 +9,6 @@ wheels/
 # Virtual environments
 .venv
 
-# Other
+# Django
 db.sqlite3
+*.mo
