@@ -18,10 +18,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+DJANGO_ENV = 'development'
+
 
 # Application definition
 
 INSTALLED_APPS = [
+    'allauth',
+    'allauth.account',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -31,6 +35,11 @@ INSTALLED_APPS = [
     'explorer.my_account',
 ]
 
+if DJANGO_ENV == 'development':
+    INSTALLED_APPS += [
+        'debug_toolbar',
+    ]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -39,8 +48,13 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+if DJANGO_ENV == 'development':
+    MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
+
 
 ROOT_URLCONF = 'explorer.urls'
 
@@ -73,8 +87,25 @@ DATABASES = {
 }
 
 
+# Authentication
 
 AUTH_USER_MODEL = 'my_account.User'
+LOGIN_URL = 'account_login'
+LOGIN_REDIRECT_URL = 'welcome'
+LOGOUT_REDIRECT_URL = 'welcome'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*', 'password2*']
+ACCOUNT_LOGIN_METHODS = ['username', 'email']
+ACCOUNT_CHANGE_EMAIL = True
+ACCOUNT_SIGNUP_FORM_HONEYPOT_FIELD = 'address'
+ACCOUNT_EMAIL_SUBJECT_PREFIX = '[Explorer] '
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
