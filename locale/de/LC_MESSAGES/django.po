@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-13 19:05+0200\n"
+"POT-Creation-Date: 2026-05-13 22:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: explorer/core/apps.py:7
+msgid "Core"
+msgstr "Core"
+
+#: explorer/core/templates/core/welcome.html:2
+msgid "Welcome to Explorer"
+msgstr "Willkommen bei Explorer"
+
 #: explorer/my_account/apps.py:7
 msgid "My Account"
 msgstr "Mein Konto"
 
-#: explorer/settings.py:103
+#: explorer/settings.py:135
 msgid "German"
 msgstr "Deutsch"
 
-#: explorer/settings.py:104
+#: explorer/settings.py:136
 msgid "English"
 msgstr "Englisch"
