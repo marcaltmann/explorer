@@ -24,17 +24,18 @@ DJANGO_ENV = 'development'
 # Application definition
 
 INSTALLED_APPS = [
-    'allauth',
     'allauth.account',
+    'allauth',
+    'django_vite',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sessions',
     'django.contrib.staticfiles',
     'explorer.core',
-    'explorer.my_account',
     'explorer.library',
+    'explorer.my_account',
     'explorer.resources',
     'explorer.organization',
 ]
@@ -148,3 +149,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'build'
+STATICFILES_DIRS = [BASE_DIR / 'static', BASE_DIR / 'vite_assets_dist']

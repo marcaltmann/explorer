@@ -28,7 +28,9 @@ class Resource(models.Model):
 
 
 class VideoFile(models.Model):
-    resource = models.ForeignKey(Resource, on_delete=models.CASCADE, related_name='video_files')
+    resource = models.ForeignKey(
+        Resource, on_delete=models.CASCADE, related_name='video_files'
+    )
     filename = models.CharField(max_length=255)
     format = models.CharField(max_length=50, blank=True)
     codec = models.CharField(max_length=50, blank=True)
@@ -46,7 +48,9 @@ class VideoFile(models.Model):
 
 
 class AudioFile(models.Model):
-    resource = models.ForeignKey(Resource, on_delete=models.CASCADE, related_name='audio_files')
+    resource = models.ForeignKey(
+        Resource, on_delete=models.CASCADE, related_name='audio_files'
+    )
     filename = models.CharField(max_length=255)
     format = models.CharField(max_length=50, blank=True)
     codec = models.CharField(max_length=50, blank=True)
@@ -63,7 +67,9 @@ class AudioFile(models.Model):
 
 
 class ImageFile(models.Model):
-    resource = models.ForeignKey(Resource, on_delete=models.CASCADE, related_name='image_files')
+    resource = models.ForeignKey(
+        Resource, on_delete=models.CASCADE, related_name='image_files'
+    )
     filename = models.CharField(max_length=255)
     format = models.CharField(max_length=50, blank=True)
     width = models.PositiveIntegerField(null=True, blank=True)
@@ -79,7 +85,9 @@ class ImageFile(models.Model):
 
 
 class DocumentFile(models.Model):
-    resource = models.ForeignKey(Resource, on_delete=models.CASCADE, related_name='document_files')
+    resource = models.ForeignKey(
+        Resource, on_delete=models.CASCADE, related_name='document_files'
+    )
     filename = models.CharField(max_length=255)
     format = models.CharField(max_length=50, blank=True)
     page_count = models.PositiveIntegerField(null=True, blank=True)

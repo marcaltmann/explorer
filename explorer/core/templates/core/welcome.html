@@ -1,2 +1,16 @@
+{% extends "base.html" %}
 {% load i18n %}
-<h1>{% translate "Welcome to Explorer" %}</h1>
+{% load static %}
+{% block title %}{{ block.super }}{% endblock %}
+{% block content %}
+    <div class="hero" data-testid="hero">
+        <div class="hero__inner">
+            <div class="hero__body">
+                <h1 class="hero__title">Explorer</h1>
+                <div class="hero__text grid-wrapper u-mt">
+                    Welcome to Explorer
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

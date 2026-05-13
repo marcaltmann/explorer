@@ -5,7 +5,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -16,12 +15,38 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Resource',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('type', models.CharField(choices=[('video', 'Video'), ('audio', 'Audio'), ('image', 'Image'), ('document', 'Document')], max_length=20)),
+                (
+                    'id',
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name='ID',
+                    ),
+                ),
+                (
+                    'type',
+                    models.CharField(
+                        choices=[
+                            ('video', 'Video'),
+                            ('audio', 'Audio'),
+                            ('image', 'Image'),
+                            ('document', 'Document'),
+                        ],
+                        max_length=20,
+                    ),
+                ),
                 ('name', models.CharField(max_length=255)),
                 ('description', models.TextField(blank=True)),
                 ('production_date', models.DateField(blank=True, null=True)),
-                ('library', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='resources', to='library.library')),
+                (
+                    'library',
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name='resources',
+                        to='library.library',
+                    ),
+                ),
             ],
             options={
                 'verbose_name': 'Resource',
@@ -31,13 +56,28 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ImageFile',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                (
+                    'id',
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name='ID',
+                    ),
+                ),
                 ('filename', models.CharField(max_length=255)),
                 ('format', models.CharField(blank=True, max_length=50)),
                 ('width', models.PositiveIntegerField(blank=True, null=True)),
                 ('height', models.PositiveIntegerField(blank=True, null=True)),
                 ('filesize', models.PositiveBigIntegerField(blank=True, null=True)),
-                ('resource', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='image_files', to='resources.resource')),
+                (
+                    'resource',
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name='image_files',
+                        to='resources.resource',
+                    ),
+                ),
             ],
             options={
                 'verbose_name': 'Image file',
@@ -47,12 +87,27 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='DocumentFile',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                (
+                    'id',
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name='ID',
+                    ),
+                ),
                 ('filename', models.CharField(max_length=255)),
                 ('format', models.CharField(blank=True, max_length=50)),
                 ('page_count', models.PositiveIntegerField(blank=True, null=True)),
                 ('filesize', models.PositiveBigIntegerField(blank=True, null=True)),
-                ('resource', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='document_files', to='resources.resource')),
+                (
+                    'resource',
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name='document_files',
+                        to='resources.resource',
+                    ),
+                ),
             ],
             options={
                 'verbose_name': 'Document file',
@@ -62,14 +117,29 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='AudioFile',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                (
+                    'id',
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name='ID',
+                    ),
+                ),
                 ('filename', models.CharField(max_length=255)),
                 ('format', models.CharField(blank=True, max_length=50)),
                 ('codec', models.CharField(blank=True, max_length=50)),
                 ('bitrate', models.PositiveIntegerField(blank=True, null=True)),
                 ('duration', models.DurationField(blank=True, null=True)),
                 ('filesize', models.PositiveBigIntegerField(blank=True, null=True)),
-                ('resource', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='audio_files', to='resources.resource')),
+                (
+                    'resource',
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name='audio_files',
+                        to='resources.resource',
+                    ),
+                ),
             ],
             options={
                 'verbose_name': 'Audio file',
@@ -79,15 +149,35 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='VideoFile',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                (
+                    'id',
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name='ID',
+                    ),
+                ),
                 ('filename', models.CharField(max_length=255)),
                 ('format', models.CharField(blank=True, max_length=50)),
                 ('codec', models.CharField(blank=True, max_length=50)),
                 ('resolution', models.CharField(blank=True, max_length=20)),
-                ('fps', models.DecimalField(blank=True, decimal_places=2, max_digits=5, null=True)),
+                (
+                    'fps',
+                    models.DecimalField(
+                        blank=True, decimal_places=2, max_digits=5, null=True
+                    ),
+                ),
                 ('duration', models.DurationField(blank=True, null=True)),
                 ('filesize', models.PositiveBigIntegerField(blank=True, null=True)),
-                ('resource', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='video_files', to='resources.resource')),
+                (
+                    'resource',
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name='video_files',
+                        to='resources.resource',
+                    ),
+                ),
             ],
             options={
                 'verbose_name': 'Video file',

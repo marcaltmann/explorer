@@ -5,7 +5,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -17,10 +16,34 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Folder',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                (
+                    'id',
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name='ID',
+                    ),
+                ),
                 ('name', models.CharField(max_length=255)),
-                ('library', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='folders', to='library.library')),
-                ('parent', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='children', to='organization.folder')),
+                (
+                    'library',
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name='folders',
+                        to='library.library',
+                    ),
+                ),
+                (
+                    'parent',
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name='children',
+                        to='organization.folder',
+                    ),
+                ),
             ],
             options={
                 'verbose_name': 'Folder',
@@ -30,9 +53,31 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='FolderItem',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('folder', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='items', to='organization.folder')),
-                ('resource', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='folder_item', to='resources.resource')),
+                (
+                    'id',
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name='ID',
+                    ),
+                ),
+                (
+                    'folder',
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name='items',
+                        to='organization.folder',
+                    ),
+                ),
+                (
+                    'resource',
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name='folder_item',
+                        to='resources.resource',
+                    ),
+                ),
             ],
             options={
                 'verbose_name': 'Folder item',
@@ -42,10 +87,25 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Series',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                (
+                    'id',
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name='ID',
+                    ),
+                ),
                 ('name', models.CharField(max_length=255)),
                 ('description', models.TextField(blank=True)),
-                ('library', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='series', to='library.library')),
+                (
+                    'library',
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name='series',
+                        to='library.library',
+                    ),
+                ),
             ],
             options={
                 'verbose_name': 'Series',
@@ -55,10 +115,30 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Tag',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                (
+                    'id',
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name='ID',
+                    ),
+                ),
                 ('name', models.CharField(max_length=100)),
-                ('library', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='tags', to='library.library')),
-                ('resources', models.ManyToManyField(blank=True, related_name='tags', to='resources.resource')),
+                (
+                    'library',
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name='tags',
+                        to='library.library',
+                    ),
+                ),
+                (
+                    'resources',
+                    models.ManyToManyField(
+                        blank=True, related_name='tags', to='resources.resource'
+                    ),
+                ),
             ],
             options={
                 'verbose_name': 'Tag',
@@ -68,17 +148,65 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='SeriesItem',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                (
+                    'id',
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name='ID',
+                    ),
+                ),
                 ('order', models.PositiveIntegerField()),
-                ('child_series', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='parent_items', to='organization.series')),
-                ('resource', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='series_items', to='resources.resource')),
-                ('series', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='items', to='organization.series')),
+                (
+                    'child_series',
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name='parent_items',
+                        to='organization.series',
+                    ),
+                ),
+                (
+                    'resource',
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name='series_items',
+                        to='resources.resource',
+                    ),
+                ),
+                (
+                    'series',
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name='items',
+                        to='organization.series',
+                    ),
+                ),
             ],
             options={
                 'verbose_name': 'Series item',
                 'verbose_name_plural': 'Series items',
                 'ordering': ['order'],
-                'constraints': [models.CheckConstraint(condition=models.Q(models.Q(('child_series__isnull', True), ('resource__isnull', False)), models.Q(('child_series__isnull', False), ('resource__isnull', True)), _connector='OR'), name='series_item_exactly_one_target')],
+                'constraints': [
+                    models.CheckConstraint(
+                        condition=models.Q(
+                            models.Q(
+                                ('child_series__isnull', True),
+                                ('resource__isnull', False),
+                            ),
+                            models.Q(
+                                ('child_series__isnull', False),
+                                ('resource__isnull', True),
+                            ),
+                            _connector='OR',
+                        ),
+                        name='series_item_exactly_one_target',
+                    )
+                ],
             },
         ),
     ]
