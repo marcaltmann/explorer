@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-13 22:27+0200\n"
+"POT-Creation-Date: 2026-05-14 00:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,18 +22,121 @@ msgstr ""
 msgid "Core"
 msgstr "Core"
 
-#: explorer/core/templates/core/welcome.html:2
-msgid "Welcome to Explorer"
-msgstr "Willkommen bei Explorer"
+#: explorer/library/apps.py:7 explorer/library/models.py:11
+msgid "Library"
+msgstr "Bibliothek"
+
+#: explorer/library/models.py:12
+msgid "Libraries"
+msgstr "Bibliotheken"
 
 #: explorer/my_account/apps.py:7
 msgid "My Account"
 msgstr "Mein Konto"
 
-#: explorer/settings.py:135
+#: explorer/organization/apps.py:7
+msgid "Organization"
+msgstr "Organisation"
+
+#: explorer/organization/models.py:21
+msgid "Folder"
+msgstr "Ordner"
+
+#: explorer/organization/models.py:22
+msgid "Folders"
+msgstr "Ordner"
+
+#: explorer/organization/models.py:37
+msgid "Folder item"
+msgstr "Ordnerelement"
+
+#: explorer/organization/models.py:38
+msgid "Folder items"
+msgstr "Ordnerelemente"
+
+#: explorer/organization/models.py:55
+msgid "Tag"
+msgstr "Tag"
+
+#: explorer/organization/models.py:56
+msgid "Tags"
+msgstr "Tags"
+
+#: explorer/organization/models.py:72 explorer/organization/models.py:73
+msgid "Series"
+msgstr "Serie"
+
+#: explorer/organization/models.py:98
+msgid "Series item"
+msgstr "Serienelement"
+
+#: explorer/organization/models.py:99
+msgid "Series items"
+msgstr "Serienelemente"
+
+#: explorer/resources/apps.py:7 explorer/resources/models.py:24
+msgid "Resources"
+msgstr "Ressourcen"
+
+#: explorer/resources/models.py:7
+msgid "Video"
+msgstr "Video"
+
+#: explorer/resources/models.py:8
+msgid "Audio"
+msgstr "Audio"
+
+#: explorer/resources/models.py:9
+msgid "Image"
+msgstr "Bild"
+
+#: explorer/resources/models.py:10
+msgid "Document"
+msgstr "Dokument"
+
+#: explorer/resources/models.py:23
+msgid "Resource"
+msgstr "Ressource"
+
+#: explorer/resources/models.py:43
+msgid "Video file"
+msgstr "Videodatei"
+
+#: explorer/resources/models.py:44
+msgid "Video files"
+msgstr "Videodateien"
+
+#: explorer/resources/models.py:62
+msgid "Audio file"
+msgstr "Audiodatei"
+
+#: explorer/resources/models.py:63
+msgid "Audio files"
+msgstr "Audiodateien"
+
+#: explorer/resources/models.py:80
+msgid "Image file"
+msgstr "Bilddatei"
+
+#: explorer/resources/models.py:81
+msgid "Image files"
+msgstr "Bilddateien"
+
+#: explorer/resources/models.py:97
+msgid "Document file"
+msgstr "Dokumentdatei"
+
+#: explorer/resources/models.py:98
+msgid "Document files"
+msgstr "Dokumentdateien"
+
+#: explorer/settings.py:139
 msgid "German"
 msgstr "Deutsch"
 
-#: explorer/settings.py:136
+#: explorer/settings.py:140
 msgid "English"
 msgstr "Englisch"
+
+#~ msgid "Welcome to Explorer"
+#~ msgstr "Willkommen bei Explorer"
